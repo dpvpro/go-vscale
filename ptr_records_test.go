@@ -27,7 +27,6 @@ func TestPTRRecordService_Create(t *testing.T) {
 		t.Error("PTR record id can't be empty")
 	}
 
-	return
 }
 
 func TestPTRRecordService_List(t *testing.T) {
@@ -46,7 +45,6 @@ func TestPTRRecordService_List(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestPTRRecordService_Get(t *testing.T) {
@@ -70,7 +68,6 @@ func TestPTRRecordService_Get(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestPTRRecordService_Update(t *testing.T) {
@@ -93,7 +90,6 @@ func TestPTRRecordService_Update(t *testing.T) {
 		t.Error("PTR record id can't be empty")
 	}
 
-	return
 }
 
 func TestPTRRecordService_Remove(t *testing.T) {
@@ -112,5 +108,4 @@ func TestPTRRecordService_Remove(t *testing.T) {
 		return
 	}
 
-	return
 }

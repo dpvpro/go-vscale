@@ -24,8 +24,6 @@ func TestSSHKeyService_List(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestSSHKeyService_Create(t *testing.T) {
@@ -47,8 +45,6 @@ func TestSSHKeyService_Create(t *testing.T) {
 		t.Error("SSH key's name is empty")
 	}
 
-	return
-
 }
 
 func TestSSHKeyService_Remove(t *testing.T) {
@@ -65,7 +61,5 @@ func TestSSHKeyService_Remove(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }

@@ -24,8 +24,6 @@ func TestConfigurationService_ListRplans(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestConfigurationService_ListPrices(t *testing.T) {
@@ -42,7 +40,5 @@ func TestConfigurationService_ListPrices(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }

@@ -27,7 +27,6 @@ func TestServerTagService_Create(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestServerTagService_List(t *testing.T) {
@@ -45,7 +44,6 @@ func TestServerTagService_List(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestServerTagService_Get(t *testing.T) {
@@ -67,8 +65,6 @@ func TestServerTagService_Get(t *testing.T) {
 		t.Error("Tag name can't be empty")
 		return
 	}
-
-	return
 
 }
 
@@ -92,8 +88,6 @@ func TestServerTagService_Update(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestServerTagService_Remove(t *testing.T) {
@@ -110,7 +104,5 @@ func TestServerTagService_Remove(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }

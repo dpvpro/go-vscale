@@ -23,8 +23,6 @@ func TestDomainService_List(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainService_Create(t *testing.T) {
@@ -46,8 +44,6 @@ func TestDomainService_Create(t *testing.T) {
 		t.Error("Domain ID can not be empty")
 		return
 	}
-
-	return
 
 }
 
@@ -71,8 +67,6 @@ func TestDomainService_Get(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainService_Update(t *testing.T) {
@@ -95,8 +89,6 @@ func TestDomainService_Update(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainService_Remove(t *testing.T) {
@@ -118,7 +110,5 @@ func TestDomainService_Remove(t *testing.T) {
 		t.Fail()
 		return
 	}
-
-	return
 
 }

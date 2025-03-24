@@ -24,6 +24,4 @@ func TestAccountService_Get(t *testing.T) {
 		return
 	}
 
-	return
-
 }

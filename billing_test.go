@@ -24,8 +24,6 @@ func TestBillingService_Billing(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestBillingService_Payments(t *testing.T) {
@@ -43,8 +41,6 @@ func TestBillingService_Payments(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestBillingService_Consumption(t *testing.T) {
@@ -61,7 +57,5 @@ func TestBillingService_Consumption(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }

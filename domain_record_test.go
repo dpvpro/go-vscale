@@ -24,8 +24,6 @@ func TestDomainRecordService_List(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainRecordService_Create(t *testing.T) {
@@ -47,8 +45,6 @@ func TestDomainRecordService_Create(t *testing.T) {
 		t.Error("Record name can't be empty")
 		return
 	}
-
-	return
 
 }
 
@@ -74,8 +70,6 @@ func TestDomainRecordService_CreateSOA(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainRecordService_CreateSRV(t *testing.T) {
@@ -97,8 +91,6 @@ func TestDomainRecordService_CreateSRV(t *testing.T) {
 		t.Error("Record name can't be empty")
 		return
 	}
-
-	return
 
 }
 
@@ -122,8 +114,6 @@ func TestDomainRecordService_CreateMX(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainRecordService_Update(t *testing.T) {
@@ -145,8 +135,6 @@ func TestDomainRecordService_Update(t *testing.T) {
 		t.Error("Record name can't be empty")
 		return
 	}
-
-	return
 
 }
 
@@ -170,8 +158,6 @@ func TestDomainRecordService_UpdateSOA(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainRecordService_UpdateSRV(t *testing.T) {
@@ -193,8 +179,6 @@ func TestDomainRecordService_UpdateSRV(t *testing.T) {
 		t.Error("Record name can't be empty")
 		return
 	}
-
-	return
 
 }
 
@@ -218,8 +202,6 @@ func TestDomainRecordService_UpdateMX(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainRecordService_Get(t *testing.T) {
@@ -242,8 +224,6 @@ func TestDomainRecordService_Get(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainRecordService_Remove(t *testing.T) {
@@ -260,7 +240,5 @@ func TestDomainRecordService_Remove(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }

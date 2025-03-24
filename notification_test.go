@@ -1,7 +1,7 @@
 package vscale_api_go
 
 import (
-	"io/ioutil"
+	"io"
 	"log"
 	"testing"
 )
@@ -24,8 +24,6 @@ func TestNotificationService_BillingSettings(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestNotificationService_BillingSettingsUpdate(t *testing.T) {
@@ -38,13 +36,11 @@ func TestNotificationService_BillingSettingsUpdate(t *testing.T) {
 
 	client := NewClient(token)
 	_, res, err := client.Notification.BillingSettingsUpdate(BillingLimit)
-	data, _ := ioutil.ReadAll(res.Body)
+	data, _ := io.ReadAll(res.Body)
 	log.Println(string(data))
 	if err != nil {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }

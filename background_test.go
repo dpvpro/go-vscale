@@ -24,8 +24,6 @@ func TestBackgroundService_ListDataCenters(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestBackgroundService_ListImages(t *testing.T) {
@@ -47,7 +45,5 @@ func TestBackgroundService_ListImages(t *testing.T) {
 		t.Error("No images received")
 		return
 	}
-
-	return
 
 }

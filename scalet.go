@@ -3,9 +3,11 @@ package vscale_api_go
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/gorilla/websocket"
+	"log"
 	"net/http"
 	"strconv"
+
+	"github.com/gorilla/websocket"
 )
 
 type ScaletService struct {
@@ -81,7 +83,13 @@ func (s *ScaletService) Create(makeFrom, rplan, name, password, location string,
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
 	}
 
 	body := struct {
@@ -116,7 +124,13 @@ func (s *ScaletService) CreateWithoutPassword(makeFrom, rplan, name, location st
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
 	}
 
 	body := struct {
@@ -149,7 +163,13 @@ func (s *ScaletService) Remove(CTID int64, wait bool) (*Scalet, *http.Response, 
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
 	}
 
 	res, err := s.client.ExecuteRequest("DELETE", fmt.Sprint("scalets/", strconv.FormatInt(CTID, 10)), []byte{}, scalet)
@@ -180,7 +200,13 @@ func (s *ScaletService) Restart(CTID int64, wait bool) (*Scalet, *http.Response,
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
 	}
 
 	res, err := s.client.ExecuteRequest("PATCH", fmt.Sprint("scalets/", strconv.FormatInt(CTID, 10), "/restart"), []byte{}, scalet)
@@ -202,7 +228,13 @@ func (s *ScaletService) Rebuild(CTID int64, wait bool) (*Scalet, *http.Response,
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
 	}
 
 	res, err := s.client.ExecuteRequest("PATCH", fmt.Sprint("scalets/", strconv.FormatInt(CTID, 10), "/rebuild"), []byte{}, scalet)
@@ -224,7 +256,13 @@ func (s *ScaletService) Stop(CTID int64, wait bool) (*Scalet, *http.Response, er
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
 	}
 
 	res, err := s.client.ExecuteRequest("PATCH", fmt.Sprint("scalets/", strconv.FormatInt(CTID, 10), "/stop"), []byte{}, scalet)
@@ -246,7 +284,13 @@ func (s *ScaletService) Start(CTID int64, wait bool) (*Scalet, *http.Response, e
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
 	}
 
 	res, err := s.client.ExecuteRequest("PATCH", fmt.Sprint("scalets/", strconv.FormatInt(CTID, 10), "/start"), []byte{}, scalet)
@@ -274,7 +318,13 @@ func (s *ScaletService) Upgrade(CTID int64, rplan string, wait bool) (*Scalet, *
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
 	}
 
 	res, err := s.client.ExecuteRequest("POST", fmt.Sprint("scalets/", strconv.FormatInt(CTID, 10), "/upgrade"), b, scalet)
@@ -335,7 +385,14 @@ func (s *ScaletService) Restore(CTID int64, makeFrom string, wait bool) (*Scalet
 
 	if wait {
 		conn, wsserr = s.client.WSSConn()
-		defer conn.Close()
+		// defer conn.Close()
+		defer func() {
+			err := conn.Close()
+			if err != nil {
+				log.Println(err)
+			}
+		}()
+
 	}
 
 	body := struct {

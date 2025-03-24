@@ -27,8 +27,6 @@ func TestDomainTagService_Create(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainTagService_List(t *testing.T) {
@@ -45,8 +43,6 @@ func TestDomainTagService_List(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }
 
@@ -70,8 +66,6 @@ func TestDomainTagService_Get(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainTagService_Update(t *testing.T) {
@@ -94,8 +88,6 @@ func TestDomainTagService_Update(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestDomainTagService_Remove(t *testing.T) {
@@ -112,7 +104,5 @@ func TestDomainTagService_Remove(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }

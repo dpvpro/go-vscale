@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"github.com/gorilla/websocket"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
@@ -96,20 +95,26 @@ func (client *WebClient) ExecuteRequest(method, url string, body []byte, object 
 	if err != nil {
 		return res, err
 	}
-	defer res.Body.Close()
+	// defer res.Body.Close()
+	defer func() {
+		err := res.Body.Close()
+		if err != nil {
+			log.Println(err)
+		}
+	}()
 
 	// Cloning response body for future using
-	buf, _ := ioutil.ReadAll(res.Body)
-	reader := ioutil.NopCloser(bytes.NewBuffer(buf))
+	buf, _ := io.ReadAll(res.Body)
+	reader := io.NopCloser(bytes.NewBuffer(buf))
 
-	res.Body = ioutil.NopCloser(bytes.NewBuffer(buf))
+	res.Body = io.NopCloser(bytes.NewBuffer(buf))
 
 	if res.Header.Get("Vscale-Error-Message") != "None" && res.Header.Get("Vscale-Error-Message") != "" {
 		return res, errors.New(res.Header.Get("Vscale-Error-Message"))
 	}
-	
+
 	if !IsSuccess(res.StatusCode) {
-		return res, errors.New("Not successful status code")
+		return res, errors.New("not successful status code")
 	}
 
 	if object != nil && (res.StatusCode == 200 || res.StatusCode == 201) {
@@ -139,7 +144,12 @@ func (client *WebClient) WSSConn() (*websocket.Conn, error) {
 // Waiting until operation will be complete
 func (client *WebClient) WaitTask(c *websocket.Conn, taskID string) (bool, error) {
 
-	defer c.Close()
+	defer func() {
+		err := c.Close()
+		if err != nil {
+			log.Println(err)
+		}
+	}()
 
 	msg := struct {
 		ID     int64 `json:"id,omitempty"`
@@ -162,9 +172,12 @@ func (client *WebClient) WaitTask(c *websocket.Conn, taskID string) (bool, error
 		}
 
 		if code == 1 {
-			json.Unmarshal(message, &msg)
+			err := json.Unmarshal(message, &msg)
+			if err != nil {
+				return false, err
+			}
 
-			if msg.Result.ID == taskID && msg.Result.Done == true {
+			if msg.Result.ID == taskID && msg.Result.Done {
 				if msg.Result.Error != "" {
 					return false, errors.New(msg.Result.Error)
 				}

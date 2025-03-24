@@ -26,8 +26,6 @@ func TestScaletService_List(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestScaletService_Create(t *testing.T) {
@@ -52,7 +50,6 @@ func TestScaletService_Create(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_CreateWithoutPassword(t *testing.T) {
@@ -76,7 +73,6 @@ func TestScaletService_CreateWithoutPassword(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Remove(t *testing.T) {
@@ -93,8 +89,6 @@ func TestScaletService_Remove(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }
 
@@ -119,7 +113,6 @@ func TestScaletService_Get(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Restart(t *testing.T) {
@@ -143,7 +136,6 @@ func TestScaletService_Restart(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Rebuild(t *testing.T) {
@@ -167,7 +159,6 @@ func TestScaletService_Rebuild(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Stop(t *testing.T) {
@@ -191,7 +182,6 @@ func TestScaletService_Stop(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Start(t *testing.T) {
@@ -215,7 +205,6 @@ func TestScaletService_Start(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Uprade(t *testing.T) {
@@ -239,7 +228,6 @@ func TestScaletService_Uprade(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Tasks(t *testing.T) {
@@ -258,7 +246,6 @@ func TestScaletService_Tasks(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_AddSSHKeys(t *testing.T) {
@@ -277,7 +264,6 @@ func TestScaletService_AddSSHKeys(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Backup(t *testing.T) {
@@ -296,7 +282,6 @@ func TestScaletService_Backup(t *testing.T) {
 		return
 	}
 
-	return
 }
 
 func TestScaletService_Restore(t *testing.T) {
@@ -315,5 +300,4 @@ func TestScaletService_Restore(t *testing.T) {
 		return
 	}
 
-	return
 }

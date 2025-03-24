@@ -19,8 +19,6 @@ func TestBackupService_List(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestBackupService_Get(t *testing.T) {
@@ -38,8 +36,6 @@ func TestBackupService_Get(t *testing.T) {
 		return
 	}
 
-	return
-
 }
 
 func TestBackupService_Remove(t *testing.T) {
@@ -56,7 +52,5 @@ func TestBackupService_Remove(t *testing.T) {
 		t.Error(err)
 		return
 	}
-
-	return
 
 }
