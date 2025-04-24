@@ -14,7 +14,7 @@ import (
 
 // Interface of Client for mocking data receiving in tests
 type Client interface {
-	ExecuteRequest(method, url string, body []byte, object interface{}) (*http.Response, error)
+	ExecuteRequest(method, url string, body []byte, object any) (*http.Response, error)
 	WSSConn() (*websocket.Conn, error)
 	WaitTask(c *websocket.Conn, taskID string) (bool, error)
 }
@@ -81,7 +81,7 @@ func NewClient(token string) *WebClient {
 }
 
 // Executing HTTP Request (receiving info from API)
-func (client *WebClient) ExecuteRequest(method, url string, body []byte, object interface{}) (*http.Response, error) {
+func (client *WebClient) ExecuteRequest(method, url string, body []byte, object any) (*http.Response, error) {
 
 	req, err := http.NewRequest(method, fmt.Sprint(client.BaseURL, url), bytes.NewBuffer(body))
 	if err != nil {
