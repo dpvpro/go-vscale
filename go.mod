@@ -1,4 +1,4 @@
-module github.com/dpvpro/go-vscale
+module github.com/dpvpro/vscale-api-client-go
 
 go 1.17
 

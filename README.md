@@ -1,11 +1,11 @@
-# go-vscale
+# Vscale-api-client-go
 
-go-vscale is a Go client library for accessing the [Vscale API](https://developers.vscale.io/documentation/api/v1/).
+vscale-api-client-go is a Go client library for accessing the [Vscale API](https://developers.vscale.io/documentation/api/v1/).
 
 ## Usage
 
 ```go
-import "github.com/vscale/go-vscale"
+import "github.com/dpvpro/vscale-api-client-go"
 ```
 
 First step is constructing Vscale client which allows to use API services.
@@ -32,7 +32,7 @@ You can run tests which make requests straightly to Vscale API.
 For now they can't be run together. Run specific test if you want to test some method.
 
 ```bash
-$ go test -v github.com/vscale/go-vscale -run TestAccountService_Get
+$ go test -v github.com/dpvpro/vscale-api-client-go -run TestAccountService_Get
 ```
 
 For convenience you can use "VSCALE_API_TOKEN" env for not passing token to every test.
